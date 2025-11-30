@@ -1,0 +1,12 @@
+# Ignore secrets
+s.env
+
+# Ignore Mac OS trash files
+.DS_Store
+
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+
+# Ignore venv if you ever make one
+venv/
