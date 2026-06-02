@@ -23,9 +23,9 @@ SERPER_KEY = os.getenv("SERPER_API_KEY")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 if not SERPER_KEY:
-    raise RuntimeError("SERPER_API_KEY is missing. Add it to s.env")
+    raise RuntimeError("SERPER_API_KEY is missing. Set it in s.env or as an environment variable.")
 if not OPENAI_API_KEY:
-    raise RuntimeError("OPENAI_API_KEY is missing. Add it to s.env")
+    raise RuntimeError("OPENAI_API_KEY is missing. Set it in s.env or as an environment variable.")
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -224,7 +224,7 @@ def llm_extract_scopes(text_block: str, company: Optional[str] = None, year: Opt
 
     prompt = f"""
 {context}
-You are extracting Scope 1, Scope 2, and Scope 3 greenhouse gas emissions from a corporate ESG/sustainability report.
+You are extracting Scope 1, Scope 2, and Scope 3 greenhouse gas emissions from a corporate ESG/sustainability report. 
 
 Pages are marked like:
 
